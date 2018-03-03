@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+			<record model="ir.ui.view" id="arpanet_sms_schedual_form">
+				<field name="name">SMS Scheduled</field>
+				<field name="model">sms.scheduled</field>
+				<field name="type">form</field>
+				<field name="arch" type="xml">
+					<form string="way2sms">
+						<header>
+							<field name="status" widget="statusbar" statusbar_visible="draft,sent"/>
+						</header>
+						<sheet>
+							<group string="SMS Schedule" style="width: 40%%" col="2"
+							colspan="2">
+								<field name="partner_id" />
+								<field name="mobile"/>
+								<field name="message"/>
+								<field name="scheduled_on"/>
+							</group>
+						</sheet>
+						<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+							<field name="message_ids" widget="mail_thread"/>
+						</div>
+					</form>
+				</field>
+		  	</record>
+
+			<record model="ir.ui.view" id="arpanet_sms_schedual_tree">
+				<field name="name">SMS Scheduled</field>
+				<field name="model">sms.scheduled</field>
+				<field name="type">tree</field>
+				<field name="arch" type="xml">
+					<tree string="SMS Schedule">
+						<field name="partner_id" />
+						<field name="mobile"/>
+						<field name="message"/>
+						<field name="scheduled_on"/>
+						<field name="status"/>
+					</tree>
+				</field>
+			</record>
+
+			<record model="ir.actions.act_window" id="action_arpanet_sms_schedular">
+				<field name="name">SMS Scheduled</field>
+				<field name="view_type">form</field>
+				<field name="view_mode">tree,form</field>
+				<field name="res_model">sms.scheduled</field>
+			</record>
+
+			<menuitem name="SMS Schedule" string="SMS Schedule" parent="sales_team.menu_sales" id="main_menu_sms_schedular" action="action_arpanet_sms_schedular" sequence="8"/>
+
+	 </data>
+</odoo>

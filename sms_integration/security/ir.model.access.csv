@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sms_config_manager,access_sms_config_manager,model_sms_config,sales_team.group_sale_manager,1,1,1,1
+access_sms_config_user_own,access_sms_config_user_own,model_sms_config,sales_team.group_sale_salesman,1,1,1,1
+access_sms_config_user_all,access_sms_config_user_all,model_sms_config,sales_team.group_sale_salesman_all_leads,1,1,1,1
+access_sms_scheduled_manager,access_sms_scheduled_manager,model_sms_scheduled,sales_team.group_sale_manager,1,1,1,1
+access_sms_scheduled_user_own,access_sms_scheduled_user_own,model_sms_scheduled,sales_team.group_sale_salesman,1,1,1,1
+access_sms_scheduled_user_all,access_sms_scheduled_user_all,model_sms_scheduled,sales_team.group_sale_salesman_all_leads,1,1,1,1

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="view_sms_wizard" model="ir.ui.view">
+			<field name="name">SMS Wizard</field>
+			<field name="model">sms.sms</field>
+			<field name="arch" type="xml">
+				<form string="Send SMS">
+					<sheet>
+						<footer>
+							<button name="send_sms" string="Send SMS" type="object" class="btn-primary"/>
+							<button name="cancel_stage" string="Cancel" special="cancel" type="object" class="btn-primary"/>
+						</footer>
+						<group>
+							<group>
+								<field name="user_id"/>
+								<field name="mobile_no"/>
+								<field name="message"/>
+								<field name="date_time"/>
+							</group>
+						</group>
+						<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+							<field name="message_ids" widget="mail_thread"/>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_sms_wizard_tree" model="ir.ui.view">
+			<field name="name">SMS Wizard Tree</field>
+			<field name="model">sms.sms</field>
+			<field name="arch" type="xml">
+				<tree create="false" edit="false">
+					<field name="user_id"/>
+					<field name="mobile_no"/>
+					<field name="message"/>
+					<field name="date_time"/>
+					<field name="status"/>
+				</tree>	
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_arpanet_sms_sms">
+			<field name="name">SMS Log Details</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="res_model">sms.sms</field>
+		</record>
+
+
+		<menuitem name="SMS Log" string="SMS Log" 
+		parent="sales_team.menu_sales" id="menu_sms_sms_log" action="action_arpanet_sms_sms" sequence="7"/>
+
+	</data>
+</odoo>
