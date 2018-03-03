@@ -5,7 +5,7 @@
     "description": """
     Module Which Provides Sms Integration With Dynasoft.
     """,
-    "author": "Arpanet Solution",
+    "author": "Arpanet Solutions",
     "website": "www.arpanetsolutions.com",
     'category': 'sale',
     "depends": ['base', 'crm', 'contacts'],
